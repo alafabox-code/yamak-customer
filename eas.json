@@ -1,0 +1,66 @@
+{
+  "cli": {
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "customer-dev": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "customer"
+      }
+    },
+    "captain-dev": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "captain"
+      }
+    },
+    "customer-preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "APP_VARIANT": "customer"
+      },
+      "autoIncrement": true
+    },
+    "captain-preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "APP_VARIANT": "captain"
+      },
+      "autoIncrement": true
+    },
+    "customer-production": {
+      "autoIncrement": true,
+      "env": {
+        "APP_VARIANT": "customer"
+      }
+    },
+    "captain-production": {
+      "autoIncrement": true,
+      "env": {
+        "APP_VARIANT": "captain"
+      }
+    },
+    "customer-production-ios-extensions": {
+      "extends": "customer-production",
+      "env": {
+        "APP_VARIANT": "customer",
+        "LIVE_ACTIVITY": "1",
+        "SHARING_EXTENSION": "1"
+      }
+    }
+  },
+  "submit": {
+    "customer-production": {},
+    "captain-production": {},
+    "customer-production-ios-extensions": {}
+  }
+}
